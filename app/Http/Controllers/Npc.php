@@ -24,21 +24,18 @@ class Npc extends Controller
     }
 
     public function number_of_citizens(){
-        $id   =   auth()->user()->id;
-        $users = User::where('id',$id)->count();
-        echo $users;
+        $citizens = Citizen::where('id',$id)->count();
+        echo $citizens;
     }
 
     public function number_of_states(){
-        $id   =   auth()->user()->id;
-        $users = User::where('id',$id)->count();
+        $users = State::where('id',$id)->count();
         echo $users;
     }
 
     public function number_of_lgas(){
-        $id   =   auth()->user()->id;
-        $users = User::where('id',$id)->count();
-        echo $users;
+        $lgas = Lga::where('id',$id)->count();
+        echo $lgas;
     }
     
 }
